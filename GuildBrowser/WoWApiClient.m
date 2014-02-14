@@ -10,7 +10,7 @@ static dispatch_once_t oncePredicate;
 + (WoWApiClient *)sharedClient
 {
     static WoWApiClient *_sharedClient;
-    // per Apple doing this once via GCD protects against race conditions
+    // per Apple doing this once vi     a GCD protects against race conditions
     dispatch_once(&oncePredicate, ^{
         // initialize self with the baseURL for us region
         _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://us.battle.net"]];
